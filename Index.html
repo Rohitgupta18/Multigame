@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamespace</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0px;
+
+        }
+        body{
+
+        background-color: rgb(3, 44, 55);
+        }
+        .nav ul{
+            display: flex;
+            flex-direction: row;
+          
+            list-style-type: none;
+background-color: rgb(235, 8, 223);
+color: rgb(244, 232, 232);
+        }
+        .nav ul li{
+           padding: 50px;
+            padding-left: 40px;
+         margin-left: 70px;
+            font-size: large;
+            display: flex;
+            align-items: center;
+            font-weight: bolder;
+        }
+        
+        .nav ul li a:hover{
+color: rgb(3, 225, 44);
+      
+}
+
+.nav{
+    display: flex;
+    font-size: x-large;
+
+}
+#logo{
+padding: 40px;
+font-weight: bolder;
+}
+.buttons{
+   overflow: hidden;
+}
+.button :hover{
+    cursor: pointer;
+    box-shadow:rgb(224, 50, 11) 0px 20px 30px -10px;
+}
+.button{
+    margin: 100px;
+    margin-top: 200px;
+    width: 150px;
+    height: 150px;
+
+}
+#snake-button{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(39, 79, 96);
+    background-size: 250px,250px;
+    margin-left: 250px;
+}
+#snake-button img{
+   height: 120px;
+   width: 120px;
+}
+#dicebutton img{
+    height:120px;
+    width:120px;
+
+}
+#dicebutton{
+    background-color: rgb(23, 10, 36);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-size: 250px,250px;
+    margin-left: 250px;
+}
+
+
+#ticktacbutton img{
+    height: 120px;
+    width: 120px;
+
+}
+#ticktacbutton{
+    background-color: rgb(224, 140, 213);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 250px,250px;
+    margin-left: 250px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="nav">
+    <nav id>
+        <ul>
+            <span id="logo">MultiGames</span> 
+            
+
+         <li> <a href="Index.html">Home </a></li>
+    <li><a href="tictactoe.html">TikTakToe</a></li>
+<li><a href="snake.html">Snake game</a></li>
+<li><a href="game4.html">Dice game</a></li>
+<li><a href="descriptions.html">Description</a></li>
+<li><a href="">Donate</a></li>
+
+
+</ul>
+
+
+    </nav></div>
+    <div class="buttons" >
+        <button class="button" id="snake-button"  onclick="window.open('snake.html')"><img src="anaconda.png" alt=""></button>
+        <button class="button" id="dicebutton" onclick="window.open('game4.html')"><img src="dice-5.png" alt=""></button>
+        <button class="button" id="ticktacbutton" onclick="window.open('tictactoe.html')"> <img src="tictactoe.png" alt=""></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+</head>
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(59, 5, 56);
+            overflow: hidden ;
+        }
+
+        .navbar ul{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .navbar{
+            background-color: rgb(11, 10, 10);
+        }
+
+        .navbar ul li{
+            margin-right: 70px;
+            font-weight: bolder;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            list-style-type: none;
+        }
+
+        
+        #logo{
+            font-size: 30px;
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        .navbar ul li a{
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar ul li a:hover{
+            color: rgb(214, 17, 207);
+        }
+
+        .box{
+            height: 500px;
+            width: 500px;
+            margin-top: 30px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            
+        }
+        .content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .score{
+            color: white;
+            margin: 50px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .net-score{
+            display: flex;
+            flex-direction: column-reverse;
+            width: 300px;
+            align-items: center;
+        }
+
+        .score-display{
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            font-size: 30px;
+            background-color: black;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .grid-item{
+            padding: 70px;
+            border: 2px solid white;
+            color: white;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        .grid-item:hover{
+            background-color: rgb(54, 53, 53);
+            cursor: pointer;
+        }
+
+        .remove-top{
+            border-top: 0px;
+        }
+        .remove-left{
+            border-left: 0px;
+        }
+        .remove-right{
+            border-right: 0px
+        }
+        .remove-bottom{
+            border-bottom: 0px;
+        }
+        .btn{
+            margin: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-new{
+            padding: 15px;
+            font-size: large;
+            border-radius: 15px;
+        }
+        .btn-new:hover{
+            cursor: pointer;
+            background-color: orange;
+        }
+
+        .line{
+            background-color: orange;
+            height: 3px;
+            width: 30vw;
+            position: absolute;
+            transition: width 1s ease-in-out;
+        }
+
+</style>
+<body>
+    <div class="navbar">
+        <span id="logo">MultiGames</span>
+                    <ul>
+                        
+                        <li><a href="descriptions.html">Descriptions</a></li>
+                        <li><a href="game4.html">Dice-game</a></li>
+                        <li><a href="snake.html">Snake game</a></li>
+                        <li><a href="tictactoe.html">tic-tac-toe game</a></li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+    </div>
+
+    <div class="content">
+        <div class="net-score">
+            <button id="button-X" class="score-display">0</button>
+            <span class="score">Player X:</span>
+        </div>
+        <div class="game">  
+            <div class="box">
+                
+                <div class="grid-item remove-top remove-left"><span class="box-text" style="color: orange"></span></div>
+                <div class="grid-item remove-top"><span class="box-text" style="color: orange"></span></div>
+                <div class="grid-item remove-top remove-right" ><span class="box-text" style="color: orange"></span></div>  
+                <div class="grid-item remove-left"><span class="box-text" style="color: orange"></span></div>
+                <div class="grid-item"><span class="box-text" style="color: orange"></span></div>
+                <div class="grid-item remove-right"><span class="box-text" style="color: orange"></span></div>  
+                <div class="grid-item remove-left remove-bottom"><span class="box-text" style="color: orange"></span></div>
+                <div class="grid-item remove-bottom"><span class="box-text" style="color: orange"></span></div>
+                <div class="grid-item remove-right  remove-bottom"><span class="box-text" style="color: orange"></span></div>
+             </div>
+        </div>
+        <div class="net-score">
+            <button id="button-O" class="score-display">0</button>
+            <span class="score">Player O:</span>
+        </div>
+    </div>
+
+    <span class="info" style="color: white; margin-left: 715px ;font-size: 20px; margin-top: 50px">
+        Turn for: X
+    </span>
+
+    <div class="btn">
+        <button class="btn-new">🔄 New game</button>
+    </div>
+  
+</body>
+
+<script>
+    const game_sound = new Audio('ting.mp3');
+    let gameIsOver = false;
+    let turn = 'X';
+    let chances_played = 0;
+    let e0, e2, e1;
+    let win = false;
+
+    //change turn
+    const changeTurn = function(){
+        return turn === 'X' ? 'O' : 'X'
+    }
+
+    //check win
+    const checkWin = ()=>{
+    let boxtext = document.getElementsByClassName('box-text');
+   let wins = [
+        [0, 1, 2, 5, 5, 0],
+        [3, 4, 5, 5, 15, 0],
+        [6, 7, 8, 5, 25, 0],
+        [0, 3, 6, -5, 15, 90],
+        [1, 4, 7, 5, 15, 90],
+        [2, 5, 8, 15, 15, 90],
+        [0, 4, 8, 5, 15, 45],
+        [2, 4, 6, 5, 15, 135],
+    ]
+    wins.forEach(e =>{
+        if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "") ){
+            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
+            let total = Number(document.getElementById(`button-${boxtext[e[0]].innerText}`).innerText);
+            document.getElementById(`button-${boxtext[e[0]].innerText}`).innerText = total + 1;
+            gameIsOver = true
+            boxtext[e[0]].style.color = 'red';
+            boxtext[e[1]].style.color = 'red';
+            boxtext[e[2]].style.color = 'red';
+            e0 = boxtext[e[0]];
+            e1 = boxtext[e[1]];
+            e2 = boxtext[e[2]];
+            win = true;
+        }
+    })
+}   
+
+    const checkDraw = function(){
+        if(chances_played >= 9 && !win){
+        document.getElementsByClassName("info")[0].innerText  = "Draw!!!";
+        document.body.style.backgroundColor = 'red'
+        gameIsOver = true;
+    };
+    }
+
+
+    //game logic
+    let boxes = document.querySelectorAll('.grid-item');
+    boxes.forEach(element=>{
+        let boxtext = element.querySelector('.box-text');
+        element.addEventListener('click', function(e){
+            if(boxtext.innerText === ''){
+                boxtext.innerText = turn;
+                chances_played +=1;
+                game_sound.play();
+                turn = changeTurn();
+                checkWin();
+                if(!gameIsOver){ document.getElementsByClassName("info")[0].innerText  = "Turn for: " + turn;
+                checkDraw();}
+            }
+        })
+    })
+
+    //reset game
+    document.querySelector('.btn-new').addEventListener('click', function(){
+        document.getElementsByClassName("info")[0].innerText  = "Turn of: " + turn;
+        document.body.style.backgroundColor = 'rgb(12, 12, 12)';
+        let grids = document.querySelectorAll('.box-text');
+        grids.forEach(element=>{
+            element.innerText = '';
+        })
+        e1.style.color = 'orange';
+        e0.style.color = 'orange';
+        e2.style.color = 'orange';
+        chances_played = 0;
+        gameIsOver = false;
+        win = false;
+        
+        
+    })
+
+   
+
+    
+
+</script>
+</html>
+  

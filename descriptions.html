@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriptions</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;  
+    }
+    body{
+        background-color: black;
+    }
+    .navbar ul{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .navbar{
+            background-color: black;
+        }
+
+        .navbar ul li{
+            margin-right: 70px;
+            font-weight: bolder;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            list-style-type: none;
+        }
+
+        
+        #logo{
+            font-size: 30px;
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        .navbar ul li a{
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar ul li a:hover{
+            color: orange;
+        }
+
+        html{
+    background-color: white;
+}
+.toggle{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px 10px;
+}
+
+.active-button{
+    color: orange;
+}
+#modes{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10PX;
+    cursor: pointer;
+}
+.hero{
+    height: 650px;
+    width: 80%;
+    position: relative;
+    margin: 100px auto;
+    overflow: hidden;
+}
+
+.btn-box{
+    display: flex;
+    border-bottom: 1px solid orange;
+}
+
+.btn-box button{
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fa{
+    margin-right: 20px;
+}
+
+.btn-box button:hover .fa{
+    color: orange;
+}
+
+.content-right img{
+    width: 320px;
+    height: 300px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+    position: absolute;
+    transform: translateX(100%);
+    transition: 0.3s;
+}
+
+.content-left{
+    flex-basis: 50%;
+}
+
+.content-left p{
+    font-size: 13px;
+    padding: 30px;
+}
+
+.content-left a{
+    width: 150px;
+    display: block;
+    padding: 8px 5px;
+    border-radius: 20px;
+    background-color: orange;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.content-right{
+    flex-basis: 50%;
+    text-align: center  ;
+}
+
+#content1{
+    transform: translateX(0%);
+}
+
+#btn-1{
+    color: orange;
+}
+
+.video{
+    margin-top: 10px;
+}
+
+#video1{
+    display: none;
+    /* display: block; */
+}
+
+.tab-buttons{
+    color: white;
+}
+p{
+    color: white;
+    font-size: larger;
+}
+
+.content p{
+    font-size: 20px;
+}
+
+h1{
+    color: white;
+}
+
+
+</style>
+<body>
+    <div class="navbar">
+        <span id="logo">MiniGame</span>
+                    <ul>
+                        
+                        <li><a href="descriptions.html">Descriptions</a></li>
+                        <li><a href="game4.html">Dice-game</a></li>
+                        <li><a href="snake.html">Snake game</a></li>
+                        <li><a href="#">tic-tac-toe game</a></li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+    </div>
+    <div class="hero">
+      <div class="btn-box">
+        <button class="tab-buttons" id="btn-1"><i class="fa fa-html5"></i>Snake-game</button>
+        <button class="tab-buttons" id="btn-2"><i class="fa fa-css3"></i>Tic-tac-toe</button>
+        <button class="tab-buttons" id="btn-3"><i class="fa fa-brands fa-square-js"></i>Dice-game</button>
+      </div>
+
+      <div class="content" id="content1">
+        <div class="content-left">
+          <h1>Learn Snake</h1>
+          <p>
+            The snake game is a classic arcade-style game where players control a snake that grows in length as it consumes food. The objective is to guide the snake around the screen, avoiding collisions with walls or its own body. The snake moves in a continuous pattern and the player must strategically navigate to collect as much food as possible without hitting any obstacles. With each successful food intake, the snake grows longer, making it more challenging to maneuver. The game typically features increasing speed levels and high-score tracking, adding to the addictive and competitive nature of this simple yet captivating game.
+          </p>
+          
+        </div>
+        <div class="content-right">
+          <img src="anaconda.png" alt="image1" />
+        </div>
+      </div>
+      <div class="content" id="content2">
+        <div class="content-left">
+          <h1>Learn tictactoe</h1>
+          <p>
+           Tic-tac-toe, also known as noughts and crosses, is a classic two-player game played on a 3x3 grid. The objective is to form a line of three matching symbols (typically X or O) either horizontally, vertically, or diagonally. Players take turns placing their symbols on the grid until one player achieves a winning line or the grid is filled without a winner, resulting in a tie. The game requires strategic thinking and prediction as players try to block their opponent's moves while aiming for their own winning combinations. Tic-tac-toe is easy to learn, yet its simplicity hides a surprising depth of tactics and possibilities.
+          </p>
+         
+        </div>
+        <div class="content-right" >
+          <img src="tictactoe.png" alt="image1" />
+        </div>
+      </div>
+      <div class="content" id="content3">
+        <div class="content-left">
+          <h1>Learn Dice-game</h1>
+          <p>
+            Dice game is a dual player game where the first person to hit the score of 10 is declared victorious. In case the player draws a 1 or 6 they lose all their current score and the chance is transferred to the next player.They will retain their total score. The hold button can always be used to add the current score to the total score and transfer the chance.
+          </p>
+          
+        </div>
+        <div class="content-right">
+          <img src="dice-5.png" alt="image1" style="border-radius: 7px">
+        </div>
+      </div>
+    </div>
+</body>
+
+<script>
+    'use strict';
+
+//  const slots = document.getElementsByClassName("grid-item");
+
+//  for(let i = 0; i < slots.length; i++){
+//     const slot = slots[i];
+//     slot.addEventListener('click', function(){
+//         const currColour = slot.style.backgroundColor;
+//    if (currColour == "gray") slot.style.backgroundColor = "orange";
+//    else slot.style.backgroundColor = "gray";
+//     })
+
+const content1 = document.querySelector('#content1');
+const content2 = document.querySelector("#content2");
+const content3 = document.querySelector("#content3");
+
+const btn1 = document.querySelector('#btn-1');
+const btn2 = document.querySelector('#btn-2');
+const btn3 = document.querySelector('#btn-3');
+
+const video1 = document.querySelector("#video1");
+const toggleModes = document.querySelector("#modes");
+
+let active_button = btn1;
+
+btn1.addEventListener('click', function(){
+    active_button = btn1;
+    content1.style.transform = "translateX(0%)";
+    content2.style.transform = "translateX(100%)";
+    content3.style.transform = "translateX(100%)";
+
+    btn1.style.color = "orange";
+    btn2.style.color = "white";
+    btn3.style.color = "white";
+
+    content1.style.transitionDelay = "0.3s";
+    content2.style.transitionDelay = "0s";
+    content3.style.transitionDelay = "0s";
+
+    video1.style.display = "none";
+
+})
+
+btn2.addEventListener("click", function () {
+    active_button = btn2;
+  content1.style.transform = "translateX(100%)";
+  content2.style.transform = "translateX(0%)";
+  content3.style.transform = "translateX(100%)";
+
+  btn2.style.color = "orange";
+   btn1.style.color = "white"
+  btn3.style.color = "white";
+  
+
+  content2.style.transitionDelay = "0.3s";
+  content1.style.transitionDelay = "0s";
+  content3.style.transitionDelay = "0s";
+});
+
+btn3.addEventListener("click", function () {
+active_button = btn3;
+  content1.style.transform = "translateX(100%)";
+  content2.style.transform = "translateX(100%)";
+  content3.style.transform = "translateX(0%)";
+
+  btn3.style.color = "orange";
+  btn2.style.color = "white";
+  btn1.style.color = "white";
+  
+
+  content3.style.transitionDelay = "0.3s";
+  content2.style.transitionDelay = "0s";
+  content1.style.transitionDelay = "0s";
+});
+
+
+document.querySelector("#watch-1").addEventListener('click', function(){
+    video1.style.display = "block";
+})
+
+// const toggleModes = document.querySelector('#modes');
+const content = document.querySelectorAll('.content');
+const tabButtons = document.querySelectorAll('.tab-buttons');
+
+
+toggleModes.addEventListener('click', function(e){
+    e.preventDefault();
+    if(toggleModes.textContent == 'Dark Mode'){
+        //altering the body
+        document.body.style.backgroundColor = "black";
+        //altering the button
+        toggleModes.textContent = "Light Mode";
+        toggleModes.style.backgroundColor = "white";
+        toggleModes.style.color = "black";
+
+        //altering tab buttons
+        for(let i = 0; i < tabButtons.length; i++){
+            const el = tabButtons[i];
+            // if(el.style.color == "orange") el.style.color = "orange";
+            el.style.color = "white";
+        }
+        active_button.style.color = "orange";
+
+        //altering the content on tabs
+       for(let i = 0; i < content.length; i++){
+        const el = content[i];
+         el.style.color = "white";
+       }
+
+    
+    }else{
+      //altering the body
+      document.body.style.backgroundColor = "white";
+      //altering the button
+      toggleModes.textContent = "Dark Mode";
+      toggleModes.style.backgroundColor = "black";
+      toggleModes.style.color = "white";
+
+      //altering tab buttons
+      for (let i = 0; i < tabButtons.length; i++) {
+        const el = tabButtons[i];
+        // if(el.style.color == "orange") el.style.color = "orange";
+        el.style.color = "black";
+      }
+      active_button.style.color = "orange";
+
+      //altering the content on tabs
+      for (let i = 0; i < content.length; i++) {
+        const el = content[i];
+        el.style.color = "black";
+      }
+    }
+})
+
+</script>
+</html>
