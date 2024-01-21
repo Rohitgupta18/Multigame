@@ -1,6 +1,4 @@
 
-Certainly! Here's a GitHub description for your "multigames" project:
-
 Multigames
 🎮 Welcome to Multigames, a collection of classic games built using HTML, CSS, and JavaScript. This repository features a variety of entertaining games to keep you engaged.
 
